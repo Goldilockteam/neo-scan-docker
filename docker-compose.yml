@@ -1,7 +1,8 @@
 version: "3"
 services:
   neo-scan:
-    image: slipoh/neo-scan
+#    image: slipoh/neo-scan
+    build: .
     container_name: "neo-scan"
     ports:
       - 4000:4000
@@ -18,6 +19,7 @@ services:
     depends_on:
       - postgresql
       - neo-privnet
+
   postgresql:
     image: postgres:10.1
     ports:
